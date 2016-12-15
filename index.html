@@ -39,6 +39,7 @@
         div.product-caption p.text-muted {}
         #about, #team, #clients, #contact {display: none;}
         #product {padding-top: 50px;}
+        #productTemplate .product-caption {min-height:125px;}
     </style>
 
 </head>
@@ -501,7 +502,7 @@ check back here for updates.
             //clone and update product modal template
             modalContainer = $("#productModalTemplate").clone();
             modalContainer.attr("id","productModal" + product["Group#"]);
-            modalContainer.find("div.modal-body h2").html(product["Product Name"]);
+            modalContainer.find("div.modal-body h2").html("Product " + product["Group#"] + "<br>" + product["Product Name"]);
             modalContainer.find("div.modal-body p.item-intro").html(product["Tagline"]);
             modalContainer.find("div.modal-body img").attr("src",productImageUrl );
             
