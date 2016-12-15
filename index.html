@@ -34,6 +34,8 @@
     <style>
         .intro-heading, #mainNav {background-color: lightgray;}
         .navbar-custom .nav li a {color:#183028;}
+        #productTemplate, #productModalTemplate {display: none;}
+        div.modal-body p.item-description {white-space: pre-wrap;}
     </style>
 
 </head>
@@ -142,8 +144,8 @@ check back here for updates.
 </h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 product-item">
+            <div id="productsRow" class="row">
+                <div id="productTemplate" class="col-md-4 col-sm-6 product-item">
                     <a href="#productModal1" class="product-link" data-toggle="modal">
                         <div class="product-hover">
                             <div class="product-hover-content">
@@ -155,76 +157,6 @@ check back here for updates.
                     <div class="product-caption">
                         <h4>Headphone Holder Keychain</h4>
                         <p class="text-muted">Makes a Great Christmas Gift!</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 product-item">
-                    <a href="#productModal2" class="product-link" data-toggle="modal">
-                        <div class="product-hover">
-                            <div class="product-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/product/42.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="product-caption">
-                        <h4>Acrylic Ornaments</h4>
-                        <p class="text-muted">Customized for your tree!</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 product-item">
-                    <a href="#productModal3" class="product-link" data-toggle="modal">
-                        <div class="product-hover">
-                            <div class="product-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/product/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="product-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 product-item">
-                    <a href="#productModal4" class="product-link" data-toggle="modal">
-                        <div class="product-hover">
-                            <div class="product-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/product/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="product-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 product-item">
-                    <a href="#productModal5" class="product-link" data-toggle="modal">
-                        <div class="product-hover">
-                            <div class="product-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/product/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="product-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 product-item">
-                    <a href="#productModal6" class="product-link" data-toggle="modal">
-                        <div class="product-hover">
-                            <div class="product-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/product/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="product-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
                     </div>
                 </div>
             </div>
@@ -481,7 +413,7 @@ check back here for updates.
     <!-- Use the modals below to showcase details about your product projects! -->
 
     <!-- product Modal 1 -->
-    <div class="product-modal modal fade" id="productModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="productModalTemplate" class="product-modal modal fade" id="productModal1" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -498,12 +430,12 @@ check back here for updates.
                                 <h2>Bamboo Headphone Holder Keychain</h2>
                                 <p class="item-intro text-muted">Makes a great Christmas gift!</p>
                                 <img class="img-responsive img-centered" src="img/product/41.jpg" alt="">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                               <ul class="list-inline">
-                                    <li>Pricing: $5 each (add $1 for custom engraving)</li>
-                                    <li>Contact: <a href="mailto:cthilleman3420@cps.edu">cthilleman3420@cps.edu</a></li>
-                                    <li>Categories: Wood, Convenience</li>
-                                </ul>
+                                <p class="item-description">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                               <!--<ul class="list-inline">-->
+                               <!--     <li>Pricing: $5 each (add $1 for custom engraving)</li>-->
+                               <!--     <li>Contact: <a href="mailto:cthilleman3420@cps.edu">cthilleman3420@cps.edu</a></li>-->
+                               <!--     <li>Categories: Wood, Convenience</li>-->
+                               <!-- </ul>-->
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Product</button>
                             </div>
                         </div>
@@ -513,170 +445,7 @@ check back here for updates.
         </div>
     </div>
 
-    <!-- product Modal 2 -->
-    <div class="product-modal modal fade" id="productModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>Acrylic Ornaments</h2>
-                                <p class="item-intro text-muted">Customized for your tree</p>
-                                <img class="img-responsive img-centered" src="img/product/42.jpg" alt="">
-                                <p>Acrylic ornaments for your Christmas tree! You can customize it, with your own messages and creative designs!!!</p>
-                                <ul class="list-inline">
-                                    <li>Pricing: $5 each (add $1 for custom engraving)</li>
-                                    <li>Contact: <a href="mailto:jjorgensen@cps.edu">jjorgensen@cps.edu</a></li>
-                                    <li>Categories: Acrylic, Holiday</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Product</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- product Modal 3 -->
-    <div class="product-modal modal fade" id="productModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-responsive img-centered" src="img/product/treehouse-preview.png" alt="">
-                                <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                                <p>You can download the PSD template in this product sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- product Modal 4 -->
-    <div class="product-modal modal fade" id="productModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-responsive img-centered" src="img/product/golden-preview.png" alt="">
-                                <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great product, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                                <p>You can download the PSD template in this product sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- product Modal 5 -->
-    <div class="product-modal modal fade" id="productModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-responsive img-centered" src="img/product/escape-preview.png" alt="">
-                                <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                                <p>You can download the PSD template in this product sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- product Modal 6 -->
-    <div class="product-modal modal fade" id="productModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-responsive img-centered" src="img/product/dreams-preview.png" alt="">
-                                <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                                <p>You can download the PSD template in this product sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBNgspaxznsB6VZgpCREx_jSjFePIRY-Uc",
-        authDomain: "lt-maker-catalog.firebaseapp.com",
-        databaseURL: "https://lt-maker-catalog.firebaseio.com",
-        storageBucket: "lt-maker-catalog.appspot.com",
-        messagingSenderId: "1060656446078"
-      };
-      firebase.initializeApp(config);
-    
-    
-        
-    
-    </script>
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
 
@@ -695,20 +464,57 @@ check back here for updates.
     <script>
         var baseUrl = 'https://script.google.com/macros/s/AKfycbwM0UOYUF3DvSJW4qHaATxRx3NGyVef3hbbNY6a4W6usENnXdDZ/exec' ;  
         var params = {docId: '1aB78YDwI4nUYE8GuV5IQCKMTXfI9wA21WNknuXXZg2k', sheetName: 'Form Responses 1'};
-        var url = baseUrl + $.param(params);
+        var url = baseUrl + "?" +  $.param(params);
+        var productContainer, modalContainer, modalDescription, productImageUrl;
+        var placeholderImageUrl = 'https://placeholdit.imgix.net/~text?txtsize=33&w=400&h=289&txt=placeholder%20for%20product ';
+        
         console.log(url);
         $(
             $.getJSON (url)
                 .done( function (data) {
                     console.log(data);
                     
-                    // $.each(data, function (i,v) {
+                    $.each(data, function (i,v) {
+                        addProduct(v);
                         
-                    // })  
+                    })  
                 })
         )
         
-        
+        function addProduct (product) {
+            productImageUrl = placeholderImageUrl + product["Group#"];
+            
+            // clone and update product template
+            productContainer = $("#productTemplate").clone();
+            
+            productContainer.find("a img").attr("src",productImageUrl );
+            productContainer.find("a").attr("href", "#productModal"+ product["Group#"]);
+            productContainer.find("div h4").html(product["Product Name"]);
+            productContainer.find("div p").html(product["Tagline"]);
+            productContainer.css("display","block");
+            $("#productsRow").append(productContainer);
+            
+            //clone and update product modal template
+            modalContainer = $("#productModalTemplate").clone();
+            modalContainer.attr("id","productModal" + product["Group#"]);
+            modalContainer.find("div.modal-body h2").html(product["Product Name"]);
+            modalContainer.find("div.modal-body p.item-intro").html(product["Tagline"]);
+            modalContainer.find("div.modal-body img").attr("src",productImageUrl );
+            
+            modalDescription = product["Detailed Description"]
+                + "<br><br>"
+                + product["Pricing Text"]
+                + "<br><br>"
+                + product["Contact Information"];
+                
+            modalContainer.find("div.modal-body p.item-description").html(modalDescription);
+            // modalContainer.find("h2").attr("src",placeholderImageUrl + product["Group#"] );
+            // modalContainer.find("a").attr("href", "#productModal"+ product["Group#"]);
+     
+            // modalContainer.find("div p").html(product["Tagline"]);
+            // modalContainer.css("display","block");
+            $("body").append(modalContainer);            
+        }
         
         
         
