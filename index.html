@@ -473,6 +473,8 @@ check back here for updates.
         var url = baseUrl + "?" +  $.param(params);
         var productContainer, modalContainer, modalDescription, productImageUrl;
         var placeholderImageUrl = 'https://placeholdit.imgix.net/~text?txtsize=33&w=400&h=289&txt=placeholder%20for%20product ';
+        var productImgFolderPath = "./img/product/";
+        
         
         console.log(url);
         
@@ -486,7 +488,7 @@ check back here for updates.
         $(
             $.getJSON (url)
                 .done( function (data) {
-                    //console.log(data);
+                    console.log(data);
                     Shuffle(data);
                     
 
@@ -501,21 +503,16 @@ check back here for updates.
         )
         
         function addProduct (product) {
-            productImageUrl = placeholderImageUrl + product["Group#"];
-            
-            if (product["Picture File Name"] == "") {
-                 productImageUrl = "./img/product/default.jpg";
-            }
-            else {
-                 productImageUrl = "./img/product/" + product["Picture File Name"];
-            }
-            
-           
-            
+            var arrImages = product["Picture File Name"].split(",");
+
+            if (arrImages[0] == "") {
+                arrImages[0] = "default.jpg";
+            }    
+
             // clone and update product template
             productContainer = $("#productTemplate").clone();
             
-            productContainer.find("a img").attr("src",productImageUrl );
+            productContainer.find("a img").attr("src",productImgFolderPath + arrImages[0] );
             productContainer.find("a").attr("href", "#productModal"+ product["Group#"]);
             productContainer.find("div h4").html(product["Product Name"]);
             productContainer.find("div p").html(product["Tagline"]);
@@ -527,7 +524,21 @@ check back here for updates.
             modalContainer.attr("id","productModal" + product["Group#"]);
             modalContainer.find("div.modal-body h2").html("Product " + product["Group#"] + "<br>" + product["Product Name"]);
             modalContainer.find("div.modal-body p.item-intro").html(product["Tagline"]);
-            modalContainer.find("div.modal-body img").attr("src",productImageUrl );
+            
+            modalContainer.find("div.modal-body img").attr("src",productImgFolderPath + arrImages[0] );
+            
+            //  if multiple images, add to bottom of modal 
+            $.each(arrImages, function(i,v) {
+               // first has already been displayed, so skip that one
+               if (i > 0) {
+                    var $img = $("<img>", {src: productImgFolderPath + v});
+                    modalContainer.find("div.modal-body").append("<br><br>", $img);  
+               }
+
+                
+            });
+            
+            
             
             modalDescription = product["Detailed Description"]
                 + "<br><br>"
