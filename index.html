@@ -39,7 +39,7 @@
         div.product-caption p.text-muted {}
         #about, #team, #clients, #contact {display: none;}
         #product {padding-top: 50px;}
-        #productTemplate .product-caption {min-height:125px;}
+        #productTemplate .product-caption {min-height:144px;}
     </style>
 
 </head>
@@ -474,11 +474,22 @@ check back here for updates.
         var placeholderImageUrl = 'https://placeholdit.imgix.net/~text?txtsize=33&w=400&h=289&txt=placeholder%20for%20product ';
         
         console.log(url);
+        
+        // to randomize the array
+        function Shuffle(o) {
+        	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        	return o;
+        };
+        
+        
         $(
             $.getJSON (url)
                 .done( function (data) {
                     //console.log(data);
-                    data = data.sort(function() { return 0.5 - Math.random() });
+                    Shuffle(data);
+                    
+
+                    
                     //console.log(data);
                     
                     $.each(data, function (i,v) {
