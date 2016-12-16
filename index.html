@@ -477,7 +477,9 @@ check back here for updates.
         $(
             $.getJSON (url)
                 .done( function (data) {
-                    console.log(data);
+                    //console.log(data);
+                    data = data.sort(function() { return 0.5 - Math.random() });
+                    //console.log(data);
                     
                     $.each(data, function (i,v) {
                         addProduct(v);
