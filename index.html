@@ -489,7 +489,14 @@ check back here for updates.
         function addProduct (product) {
             productImageUrl = placeholderImageUrl + product["Group#"];
             
-            productImageUrl = "./img/product/" + product["Group#"] + ".jpg";
+            if (product["Picture File Name"] == "") {
+                 productImageUrl = "./img/product/default.jpg";
+            }
+            else {
+                 productImageUrl = "./img/product/" + product["Group#"] + ".jpg";
+            }
+            
+           
             
             // clone and update product template
             productContainer = $("#productTemplate").clone();
