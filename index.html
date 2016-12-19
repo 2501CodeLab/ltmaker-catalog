@@ -538,9 +538,16 @@ check back here for updates.
                 
             });
             
+            var modalProductLink = product["Product Website URL"];
             
+            if (modalProductLink != "") {
+                modalProductLink = '<h4><a href="'
+                    + modalProductLink
+                    + '">More details on our website</a></h4>';
+            }
             
             modalDescription = product["Detailed Description"]
+                + modalProductLink
                 + "<br><br>"
                 + product["Pricing Text"]
                 + "<br><br>"
