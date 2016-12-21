@@ -169,7 +169,7 @@ check back here for updates.
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/product/41.jpg" class="img-responsive" alt="">
+                        <img src="img/product/41.jpg" class="img-responsive img-product" alt="">
                     </a>
                     <div class="product-caption">
                         <h4>Headphone Holder Keychain</h4>
@@ -446,7 +446,7 @@ check back here for updates.
                                 <!-- Project Details Go Here -->
                                 <h2>Bamboo Headphone Holder Keychain</h2>
                                 <p class="item-intro text-muted">Makes a great Christmas gift!</p>
-                                <img class="img-responsive img-centered" src="img/product/41.jpg" alt="">
+                                <img class="img-responsive img-centered img-product" src="img/product/41.jpg" alt="">
                                 <p class="item-description">Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                <!--<ul class="list-inline">-->
                                <!--     <li>Pricing: $5 each (add $1 for custom engraving)</li>-->
@@ -510,6 +510,18 @@ check back here for updates.
                         addProduct(v);
                         
                     })  
+                
+                    
+                    $(".img-product").on('load', function(e){
+                        //console.log('Success!' + $(this).attr("src"));
+                    }).on('error', function(e) {
+                        //console.log('Error!' + $(this).attr("src"));
+                        $(this).attr("src", productImgFolderPath + "default.jpg");
+                    });    
+                    
+                    
+                    
+                    
                 })
         )
         
@@ -542,7 +554,8 @@ check back here for updates.
             $.each(arrImages, function(i,v) {
                // first has already been displayed, so skip that one
                if (i > 0) {
-                    var $img = $("<img>", {src: productImgFolderPath + v});
+                    var $img = $("<img class='img-product'>", {src: productImgFolderPath + v});
+                    
                     modalContainer.find("div.modal-body").append("<br><br>", $img);  
                }
 
